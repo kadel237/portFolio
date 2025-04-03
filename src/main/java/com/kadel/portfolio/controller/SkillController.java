@@ -35,5 +35,15 @@ public class SkillController {
          skillService.deleteSkill(id);
          return ResponseEntity.noContent().build();
      }
+     @PutMapping("/{id}")
+    public ResponseEntity<Skill> updateSkill(@PathVariable Long id , @RequestBody Skill skill){
+         Skill sk= skillService.getSkill(id).orElseThrow(()->new RuntimeException("Skill not found"));
+         sk.setName(skill.getName());
+         sk.setDescription(skill.getDescription());
+         sk.setLevel(skill.getLevel());
+         Skill skillCreated = skillService.createSkills(sk);
+         return ResponseEntity.ok(skillCreated);
+
+     }
 
 }

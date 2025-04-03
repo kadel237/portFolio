@@ -3,6 +3,8 @@ package com.kadel.portfolio.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 
 
 @Getter
@@ -27,9 +29,9 @@ public class Experience {
 
 
     @Column(nullable = false)
-    private String startDate;
+    private LocalDate startDate;
 
-    private String endDate;
+    private LocalDate endDate;
 
     @Enumerated(EnumType.STRING)
     private JobType jobType;
