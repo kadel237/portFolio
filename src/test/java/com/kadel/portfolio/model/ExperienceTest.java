@@ -28,8 +28,8 @@ public class ExperienceTest {
     }
     @Test
     public void testExperienceStartDate(){
-        assertNotNull(experience.getStartDate());
         experience.setStartDate(LocalDate.of(2001,3,12));
+        assertNotNull(experience.getStartDate());
         assertEquals(LocalDate.of(2001,3,12),experience.getStartDate());
     }
 }
